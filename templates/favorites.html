@@ -1,0 +1,19 @@
+<h3>favorite photos</h3>
+<hr>
+<p><a href="/">back home</a></p>
+<br>
+<div class="row" ng-show="favorites.length > 0">
+  <div class="col-md-3 col-sm-4" ng-repeat="photo in favorites">
+    <div class="thumbnail">
+      <img ng-src="{{photo.images.standard_resolution.url}}">
+      <br>
+      <p>
+        @{{photo.user.username}}
+        <span class="pull-right">
+          <span class="glyphicon glyphicon-heart"></span>
+          <ng-pluralize count="{{photo.likes.count}}" when="{'one': '1 like', 'other': '{} likes'}"></ng-pluralize>
+        </span>
+      </p>
+    </div>
+  </div>
+</div>
